@@ -127,6 +127,9 @@ if(BUILD_TESTING)
             ${CMAKE_CURRENT_SOURCE_DIR}/tools/tests/test_check_conventions_body_bom.py)
         add_test(NAME conventions_agent_files COMMAND ${Python3_EXECUTABLE}
             ${CMAKE_CURRENT_SOURCE_DIR}/tools/tests/test_check_conventions_agent_files.py)
+        add_test(NAME web_release COMMAND ${Python3_EXECUTABLE}
+            ${CMAKE_CURRENT_SOURCE_DIR}/tools/tests/test_web_release.py)
+        set_tests_properties(web_release PROPERTIES TIMEOUT 20)
     endif()
 endif()
 
